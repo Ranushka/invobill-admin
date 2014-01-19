@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitationsSAJ 'z ARTZz
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1"/>
+
+        <link rel="stylesheet" href="lib/jquery.mobile-1.4.0.min.css" />
+        <link rel="stylesheet" href="lib/fonts/fonts.css" />
+
+        <script src="lib/jquery-1.10.2.min.js"></script> 
+        <script src="lib/jquery.mobile-1.4.0.min.js"></script>
+
+        <!-- charting relate javascrips -->
+        <script src="charts/globalize.min.js"></script>
+        <script src="charts/dx.chartjs.js"></script>
+
+        <title>InvoBill - Dashboard</title>
+
+
+    </head>
+    <body>
+<!-- --------------invoice---------------------------------------------------------------------------------------------------         -->
+
+
+        <div data-role="page" data-theme="a" id="invoice">
+            
+            <div data-role="header" data-theme="a" data-position="fixed" class="header">
+                <div class="ui-block-a logo_wraper">
+                    <a href="#invoice"      id="invoice_nav"    class="" data-transition="none"><img src="img/logo.svg" alt="" id="logo"></a>
+                </div>
+                <div class="ui-block-b main_nav_weaper">
+                    <div class="ui-grid-a ui-responsive">
+                        <div class="ui-block-a"><h2 class="page_name">Dashboard</h2></div>
+                        <div class="ui-block-b">
+                            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right user_controll" data-corners="false">
+                                <a href="#" class="ui-btn">Ranushka Goonesekere</a>
+                            </div>
+                        </div>
+                    </div><!-- /grid-a -->
+                    <!-- <div class="ui-grid-solo">
+                        <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right user_controll" data-corners="false">
+                            <a href="#" class="ui-btn">Ranushka Goonesekere</a>
+                        </div>
+                    </div> -->
+                    
+                </div>
+            </div>
+
+            <nav id="main_navigation">
+                <ul data-role="listview">
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="clients.html">Clients</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="servise.html">Servises</a></li>
+                    <li><a href="users.html">Users</a></li>
+                </ul>
+            </nav>
+
+            <div id="main_content" data-role="content" data-theme="a">
+
+                <section class="ui-grid-b ui-responsive">
+                    <article class="ui-block-a">
+                        <div class="ui-body ui-body-d">
+                           <header>
+                                <h3>Today sales</h3>
+                                <a href="#popupNestedThree" data-rel="popup" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-transition="pop">Select</a>
+                                <div data-role="popup" id="popupNestedThree" data-theme="none">
+                                    <fieldset data-role="controlgroup" data-mini="true">
+                                        <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+                                        <label for="checkbox-v-1a">One</label>
+                                        <input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+                                        <label for="checkbox-v-1b">Two</label>
+                                        <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
+                                        <label for="checkbox-v-1c">Three</label>
+                                    </fieldset>
+                                </div><!-- /popup -->
+                            </header><!-- /header -->
+                            <div class="ui-body-inner">
+                                <ul data-role="listview" class="nomal_list">
+                                    <li><a href="#">Acura</a></li>
+                                    <li><a href="#">Audi</a></li>
+                                    <li><a href="#">BMW</a></li>
+                                    <li><a href="#">Cadillac</a></li>
+                                    <li><a href="#">CBR</a></li>
+                                    <li><a href="#">Ferrari</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="ui-block-b">
+                        <div class="ui-body ui-body-d">
+                            <header>
+                                <h3>Reseved dues</h3>
+                                <a href="#popupNestedfour" data-rel="popup" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-transition="pop">Select</a>
+                                <div data-role="popup" id="popupNestedfour" data-theme="none">
+                                    <fieldset data-role="controlgroup" data-mini="true">
+                                        <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+                                        <label for="checkbox-v-1a">One</label>
+                                        <input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+                                        <label for="checkbox-v-1b">Two</label>
+                                        <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
+                                        <label for="checkbox-v-1c">Three</label>
+                                    </fieldset>
+                                </div><!-- /popup -->
+                            </header><!-- /header -->
+                            <div class="ui-body-inner">
+                                <ul data-role="listview" class="nomal_list">
+                                    <li><a href="#">Acura</a></li>
+                                    <li><a href="#">Audi</a></li>
+                                    <li><a href="#">BMW</a></li>
+                                    <li><a href="#">Cadillac</a></li>
+                                    <li><a href="#">CBR</a></li>
+                                    <li><a href="#">Ferrari</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="ui-block-c">
+                        <div class="ui-body ui-body-d">
+                            <header>
+                                <h3>Tody invoisings</h3>
+                                <a href="#popupNestedfive" data-rel="popup" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-transition="pop">Select</a>
+                                <div data-role="popup" id="popupNestedfive" data-theme="none">
+                                    <fieldset data-role="controlgroup" data-mini="true">
+                                        <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+                                        <label for="checkbox-v-1a">One</label>
+                                        <input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+                                        <label for="checkbox-v-1b">Two</label>
+                                        <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
+                                        <label for="checkbox-v-1c">Three</label>
+                                    </fieldset>
+                                </div><!-- /popup -->
+                            </header><!-- /header -->
+                            <div class="ui-body-inner">
+                                <ul data-role="listview" class="nomal_list">
+                                    <li><a href="#">Acura</a></li>
+                                    <li><a href="#">Audi</a></li>
+                                    <li><a href="#">BMW</a></li>
+                                    <li><a href="#">Cadillac</a></li>
+                                    <li><a href="#">CBR</a></li>
+                                    <li><a href="#">Ferrari</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </section><!-- /grid-b -->
+
+
+
+                <div class="ui-grid-solo">
+                    <article class="ui-block-a ui-body">
+                        <header>
+                            <h3>Overol sales for year</h3>
+                            <a href="#popupNested" data-rel="popup" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-transition="pop">Select products</a>
+                            
+                            <div data-role="popup" id="popupNested" data-theme="none">
+                                <div data-role="collapsible-set" data-theme="a" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+                                    <div data-role="collapsible" data-inset="false">
+                                        <h2>Products</h2>
+                                        <fieldset data-role="controlgroup" data-mini="true">
+                                            <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+                                            <label for="checkbox-v-1a">One</label>
+                                            <input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+                                            <label for="checkbox-v-1b">Two</label>
+                                            <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
+                                            <label for="checkbox-v-1c">Three</label>
+                                        </fieldset>
+                                    </div><!-- /collapsible -->
+                                    <div data-role="collapsible" data-inset="false">
+                                        <h2>Servises</h2>
+                                        <fieldset data-role="controlgroup" data-mini="true">
+                                            <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+                                            <label for="checkbox-v-1a">One</label>
+                                            <input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+                                            <label for="checkbox-v-1b">Two</label>
+                                            <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
+                                            <label for="checkbox-v-1c">Three</label>
+                                        </fieldset>
+                                    </div><!-- /collapsible -->
+
+                                </div><!-- /collapsible set -->
+                            </div><!-- /popup -->
+                        </header><!-- /header -->
+                        <div class="ui-body-inner">
+                            <!-- Line And Point Series svg chart will apair at hear -->
+                            <div id="overoll_salse" style="height: 300px;margin-top: 20px;"></div>
+                        </div>
+                    </article>
+                </div>
+
+
+
+                <section class="ui-grid-a ui-responsive">
+                    <article class="ui-block-a">
+                        <div class="ui-body ui-body-d">
+                            <header>
+                                <h3>Overol sales for year</h3>
+                                <a href="#popupNestedTwo" data-rel="popup" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-transition="pop">Select day</a>
+                                <div data-role="popup" id="popupNestedTwo" data-theme="none">
+                                    <fieldset data-role="controlgroup" data-mini="true">
+                                        <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+                                        <label for="checkbox-v-1a">One</label>
+                                        <input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+                                        <label for="checkbox-v-1b">Two</label>
+                                        <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
+                                        <label for="checkbox-v-1c">Three</label>
+                                    </fieldset>
+                                </div><!-- /popup -->
+                            </header><!-- /header -->
+                            <div class="ui-body-inner">
+                                <ul data-role="listview" data-split-icon="gear" class="list_with_image_detail">
+                                    <li><a href="#">
+                                        <img src="img/temp/1.jpg">
+                                    <h2>Broken Bells</h2>
+                                    <p>Broken Bells</p></a>
+                                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                    </li>
+                                    <li><a href="#">
+                                        <img src="img/temp/2.jpg">
+                                    <h2>Warning</h2>
+                                    <p>Hot Chip</p></a>
+                                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                    </li>
+                                    <li><a href="#">
+                                        <img src="img/temp/3.jpg">
+                                    <h2>Wolfgang Amadeus Phoenix</h2>
+                                    <p>Phoenix</p></a>
+                                        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="ui-block-b">
+                        <div class="ui-body ui-body-d">
+                            <header>
+                                <h3>Overol sales for year</h3>
+                                <a href="#popupNestedThree" data-rel="popup" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-transition="pop">Select</a>
+                                <div data-role="popup" id="popupNestedThree" data-theme="none">
+                                    <fieldset data-role="controlgroup" data-mini="true">
+                                        <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+                                        <label for="checkbox-v-1a">One</label>
+                                        <input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+                                        <label for="checkbox-v-1b">Two</label>
+                                        <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
+                                        <label for="checkbox-v-1c">Three</label>
+                                    </fieldset>
+                                </div><!-- /popup -->
+                            </header><!-- /header -->
+                            <div class="ui-body-inner">
+                                <ul data-role="listview" class="nomal_list">
+                                    <li><a href="#">Acura</a></li>
+                                    <li><a href="#">Audi</a></li>
+                                    <li><a href="#">BMW</a></li>
+                                    <li><a href="#">Cadillac</a></li>
+                                    <li><a href="#">CBR</a></li>
+                                    <li><a href="#">Ferrari</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </section><!-- /grid-b -->
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="js/chart-init.js"></script>
+    </body>
+</html>
