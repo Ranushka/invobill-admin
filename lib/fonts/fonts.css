@@ -251,6 +251,8 @@ border-top: 1px solid rgb(228, 228, 228);
 #main_content{
     width: calc(100% - 150px); 
     float: left;
+    border-left: 1px solid rgb(221, 221, 221);
+    margin-left: -1px;
 }
 
 .ui-header-fixed .user_controll a{
@@ -264,14 +266,21 @@ border-bottom: 0;
 #main_navigation ul li a{
     line-height: 40px;
 }
-#main_navigation ul li a.active{
+#main_navigation ul li a.active,
+#main_navigation ul li a.ui-btn-active{
     background: rgb(255, 255, 255);
+    border-color: rgb(221, 221, 221);
+color: rgb(51, 51, 51);
+text-shadow: 0 1px 0 rgb(243, 243, 243);
 }
 
 #main_navigation .ui-first-child a{
     border-top: 0;
 }
 
+.logout{
+    margin-top: 16px;
+}
 .ui-content {
 padding: 1em 0;
 }
