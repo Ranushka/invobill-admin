@@ -265,13 +265,15 @@ border-bottom: 0;
 
 #main_navigation ul li a{
     line-height: 40px;
+    border-right: 1px solid rgb(221, 221, 221);
 }
 #main_navigation ul li a.active,
 #main_navigation ul li a.ui-btn-active{
-    background: rgb(255, 255, 255);
+    background: #fff;
     border-color: rgb(221, 221, 221);
 color: rgb(51, 51, 51);
 text-shadow: 0 1px 0 rgb(243, 243, 243);
+border-right-color: #fff;
 }
 
 #main_navigation .ui-first-child a{
@@ -336,7 +338,7 @@ padding-top: 0;
     /*border-bottom: 4px solid rgb(51, 136, 204);*/
     /*border-width: 4px 0;*/
 }
-.page_name{
+.page_name,.hi_user span{
 margin: 0;
 padding-top: 8px;
 margin-left: 1em;
@@ -431,6 +433,28 @@ padding-top: 5px;
     font-family: "RobotoThin" !important;
     text-align: center;
     line-height: 6px;
+}
+
+
+/*table styles*/
+.list_strips thead th,
+.list_strips tbody tr:last-child {
+    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.list_strips tbody th,
+.list_strips tbody td {
+    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.list_strips tbody tr:last-child th,
+.list_strips tbody tr:last-child td {
+    border-bottom: 0;
+}
+.list_strips tbody tr:nth-child(odd) td,
+.list_strips tbody tr:nth-child(odd) th {
+    background-color: #eeeeee; /* non-RGBA fallback  */
+    background-color: rgba(0,0,0,.04);
 }
 
 
