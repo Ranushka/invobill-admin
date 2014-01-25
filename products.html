@@ -9,148 +9,215 @@
         <link rel="stylesheet" href="lib/jquery.mobile-1.4.0.min.css" />
         <link rel="stylesheet" href="lib/fonts/fonts.css" />
 
+
+        <script src="js/mustache.js"></script> 
+
         <script src="lib/jquery-1.10.2.min.js"></script> 
         <script src="lib/jquery.mobile-1.4.0.min.js"></script>
 
         <!-- charting relate javascrips -->
+
         <script src="charts/globalize.min.js"></script>
         <script src="charts/dx.chartjs.js"></script>
-
         <title>InvoBill - Products</title>
 
 
     </head>
     <body>
+
 <!-- --------------invoice---------------------------------------------------------------------------------------------------         -->
 
 
+
         <div data-role="page" data-theme="a" id="invoice">
-            
-            <div data-role="header" data-theme="a" data-position="fixed" class="header">
+            <!-- s header section -->
+            <header data-role="header" data-theme="a" data-position="fixed" class="header">
                 <div class="ui-block-a logo_wraper">
                     <a href="#invoice"      id="invoice_nav"    class="" data-transition="none"><img src="img/logo.svg" alt="" id="logo"></a>
                 </div>
                 <div class="ui-block-b main_nav_weaper">
                     <div class="ui-grid-b ui-responsive">
-                        <div class="ui-block-a"><h2 class="page_name">Products</h2></div>
+                        <div class="ui-block-a">
+                            <h2 class="page_name">Products</h2>
+                        </div>
                         <div class="ui-block-b">
                             <input type="search" style="height: 44px;" name="search-2" id="search-2" value="">
                         </div>
                         <div class="ui-block-c">
-                            <a href="#" class="ui-btn ui-corner-all ui-icon-lock ui-btn-icon-notext logout">Log out</a>
+                            <!-- <a href="#" class="ui-btn ui-corner-all ui-icon-lock ui-btn-icon-notext logout">Log out</a> -->
                             <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right user_controll" data-corners="false">
                                 <a href="#" class="ui-btn">Ranushka Goonesekere</a>
                             </div>
                         </div>
-                    </div><!-- /grid-a -->
-                    <!-- <div class="ui-grid-solo">
-                        <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right user_controll" data-corners="false">
-                            <a href="#" class="ui-btn">Ranushka Goonesekere</a>
-                        </div>
-                    </div> -->
-                    
+                    </div><!-- /grid-a -->                    
                 </div>
-            </div>
+            </header>
+            <!-- e header section -->
 
+            <!-- s sidebar navigation -->
             <nav id="main_navigation">
                 <ul data-role="listview">
                     <li data-icon="grid"><a href="dashboard.html">Dashboard</a></li>
                     <li data-icon="heart"><a href="clients.html">Clients</a></li>
                     <li data-icon="info"><a href="products.html" class="active">Products</a></li>
-                    <li data-icon="info"><a href="servise.html">Servises</a></li>
+                    <!-- <li data-icon="info"><a href="servise.html">Services</a></li> -->
                     <li data-icon="user"><a href="users.html">Users</a></li>
                     <li data-icon="bullets"><a href="reports.html">Reports</a></li>
                 </ul>
             </nav>
+            <!-- e sidebar navigation -->
 
+            <!-- s main content -->
             <div id="main_content" data-role="content" data-theme="a">
 
+                <div data-role="tabs" id="tabs">
+                    
+                    <!-- s tab navigation -->
+                    <nav data-role="navbar">
+                        <ul>
+                            <li><a href="#tab-one" data-ajax="false" class="tab-border ui-btn-active">All Products</a></li>
+                            <li><a href="#tab-two" data-ajax="false" class="tab-border">Due Clients</a></li>
+                            <li><a href="ajax-content.html" data-ajax="false" class="tab-border">Settings</a></li>
+                        </ul>
+                    </nav>
+                    <!-- e tab navigation -->
+
+                    <!-- s tab tab-one -->
+                    <div id="tab-one" class="ui-body-d ui-content">
+
+                        <section class="ui-grid-a ui-responsive">
 
 
-                <section class="ui-grid-a ui-responsive">
-                    <article class="ui-block-a">
-                        <div class="ui-body ui-body-d no-bc">
-                            <ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-filter="true" data-filter-placeholder="Search Clients..." data-inset="true" data-shadow="false" data-corners="false">
-                                <li><a href="#">
-                                    <img src="img/temp/1.jpg">
-                                <h2>Broken Bells</h2>
-                                <p>Broken Bells</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/2.jpg">
-                                <h2>Warning</h2>
-                                <p>Hot Chip</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/3.jpg">
-                                <h2>Wolfgang Amadeus Phoenix</h2>
-                                <p>Phoenix</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/2.jpg">
-                                <h2>Warning</h2>
-                                <p>Hot Chip</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/3.jpg">
-                                <h2>Wolfgang Amadeus Phoenix</h2>
-                                <p>Phoenix</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/2.jpg">
-                                <h2>Warning</h2>
-                                <p>Hot Chip</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/3.jpg">
-                                <h2>Wolfgang Amadeus Phoenix</h2>
-                                <p>Phoenix</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/2.jpg">
-                                <h2>Warning</h2>
-                                <p>Hot Chip</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/3.jpg">
-                                <h2>Wolfgang Amadeus Phoenix</h2>
-                                <p>Phoenix</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/2.jpg">
-                                <h2>Warning</h2>
-                                <p>Hot Chip</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                                <li><a href="#">
-                                    <img src="img/temp/3.jpg">
-                                <h2>Wolfgang Amadeus Phoenix</h2>
-                                <p>Phoenix</p></a>
-                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
+<script>
+    
+    var person = {
+    firstName: "Christophe",
+    lastName: "Coenraets",
+    blogURL: "http://coenraets.org"
+};
+var template = "<h1>{{firstName}} {{lastName}}</h1>Blog: {{blogURL}}";
+var html = Mustache.to_html(template, person);
 
 
-                    <article class="ui-block-b">
-                        <div class="ui-body ui-body-d helper_text_oncuting_edge">
-                            <h3>Select client to viwe more details</h3>
-                            <h4>or</h4>
-                            <h3>Click "cog" icon for modarate details</h3>
-                        </div>
-                    </article>
-                </section><!-- /grid-b -->
+$(function () {
+    $('#sampleArea').html(html);
+})
+
+</script>
+
+
+
+
+
+                            <!-- s block A -->
+                            <article class="ui-block-a">
+                                <div class="ui-body ui-body-d no-bc">
+
+                                <div id="sampleArea">gh</div>
+                                    <ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-filter="true" data-filter-placeholder="Search Clients..." data-inset="true" data-shadow="false" data-corners="false">
+                                        <li><a href="#">
+                                            <img src="img/temp/1.jpg">
+                                        <h2>Broken Bells</h2>
+                                        <p>Broken Bells</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/2.jpg">
+                                        <h2>Warning</h2>
+                                        <p>Hot Chip</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/3.jpg">
+                                        <h2>Wolfgang Amadeus Phoenix</h2>
+                                        <p>Phoenix</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/2.jpg">
+                                        <h2>Warning</h2>
+                                        <p>Hot Chip</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/3.jpg">
+                                        <h2>Wolfgang Amadeus Phoenix</h2>
+                                        <p>Phoenix</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/2.jpg">
+                                        <h2>Warning</h2>
+                                        <p>Hot Chip</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/3.jpg">
+                                        <h2>Wolfgang Amadeus Phoenix</h2>
+                                        <p>Phoenix</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/2.jpg">
+                                        <h2>Warning</h2>
+                                        <p>Hot Chip</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/3.jpg">
+                                        <h2>Wolfgang Amadeus Phoenix</h2>
+                                        <p>Phoenix</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/2.jpg">
+                                        <h2>Warning</h2>
+                                        <p>Hot Chip</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                        <li><a href="#">
+                                            <img src="img/temp/3.jpg">
+                                        <h2>Wolfgang Amadeus Phoenix</h2>
+                                        <p>Phoenix</p></a>
+                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <!-- e block A -->
+
+                            <!-- s block B -->
+                            <article class="ui-block-b">
+                                <div class="ui-body ui-body-d helper_text_oncuting_edge">
+                                    <h3>Select client to view more details</h3>
+                                    <h4>or</h4>
+                                    <h3>Click "cog" icon for moderate details</h3>
+                                </div>
+                            </article>
+                            <!-- e block B -->
+
+                        </section><!-- /grid-b -->
+
+                    </div>
+                    <!-- e tab tab-one -->
+
+                    <!-- e tab tab-one -->
+                    <div id="tab-two">
+
+                        <ul data-role="listview" data-inset="true">
+                            <li><a href="#">Acura</a></li>
+                            <li><a href="#">Audi</a></li>
+                            <li><a href="#">BMW</a></li>
+                            <li><a href="#">Cadillac</a></li>
+                            <li><a href="#">Ferrari</a></li>
+                        </ul>
+
+                    </div><!-- e tab tab-two -->
+                  
+                </div>
+
             </div>
+            <!-- e main content -->
 
         </div>
 

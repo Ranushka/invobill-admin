@@ -247,13 +247,32 @@ border-top: 1px solid rgb(228, 228, 228);
 #main_navigation{
     width: 150px;
     float: left;
+    position: fixed;
 }
 #main_content{
-    width: calc(100% - 150px); 
+    width: calc(100% - 214px);
+    margin-left: 149px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 32px;
     float: left;
     border-left: 1px solid rgb(221, 221, 221);
-    margin-left: -1px;
+    /*margin-left: -1px;*/
 }
+
+#main_content .ui-body,
+#main_content .ui-grid-solo>.ui-body{
+    background: rgb(246, 246, 246);
+    padding:0;
+}
+
+#main_content .ui-grid-a>.ui-block-a{
+    padding-right: 16px;
+}
+#main_content .ui-grid-a>.ui-block-b{
+    padding-left: 16px;
+}
+
 
 .ui-header-fixed .user_controll a{
 line-height: 44px;
@@ -269,8 +288,8 @@ border-bottom: 0;
 }
 #main_navigation ul li a.active,
 #main_navigation ul li a.ui-btn-active{
-    background: #fff;
-    border-color: rgb(221, 221, 221);
+background: #fff;
+border-color: rgb(221, 221, 221);
 color: rgb(51, 51, 51);
 text-shadow: 0 1px 0 rgb(243, 243, 243);
 border-right-color: #fff;
@@ -307,16 +326,6 @@ padding: 1em 0;
     background-color: rgb(51, 136, 204);
 }
 
-/*to align articals align correctly*/
-.ui-grid-b > .ui-block-a > .ui-body,
-.ui-grid-a > .ui-block-a > .ui-body{
-    margin-left: 2em;
-}
-
-.ui-grid-b > .ui-block-c > .ui-body,
-.ui-grid-a > .ui-block-b > .ui-body{
-    margin-right: 2em;
-}
 
 
 
@@ -354,15 +363,12 @@ font-weight: 300 !important;
 padding-top: 5px;
 }
 
-.ui-body,.ui-grid-solo>.ui-body{
-    background: rgb(246, 246, 246);
-    margin: 1em;
-    padding:0;
-}
+
+
+
 .ui-grid-solo>.ui-block-a {
     width: auto;
-    margin-left: 2em;
-    margin-right: 2em;
+
 }
 
 .ui-body-inner,.ui-body header h3{
@@ -457,6 +463,26 @@ padding-top: 5px;
     background-color: rgba(0,0,0,.04);
 }
 
+/* // tabs relate styles */
+.ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head+body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head+body .ui-btn-a.ui-focus, html head+body .ui-body-a.ui-focus {
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(51, 136, 204, 0.5);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(51, 136, 204, 0.5);
+    box-shadow: 0px 0px 0px 4px rgba(51, 136, 204, 0.5);
+
+    transition: box-shadow linear .1s;
+    -webkit-transition: box-shadow linear .1s;
+    
+}
+
+li.ui-tabs-active > a{
+    background-color: rgb(51, 136, 204)!important;
+    border-color: rgb(51, 136, 204) !important;
+    color: rgb(255, 255, 255) !important;
+    text-shadow: 0 1px 0 rgb(0, 85, 153) !important;
+}
+.tab-border{
+    border-color: rgb(51, 136, 204) !important;
+}
 
 @media (max-width: 480px){
 
