@@ -10,15 +10,17 @@
         <link rel="stylesheet" href="lib/fonts/fonts.css" />
 
 
-        <script src="js/mustache.js"></script> 
+<!-- s 
+        <script src="js/lib/jquery-1.10.2.min.js"></script> 
 
-        <script src="lib/jquery-1.10.2.min.js"></script> 
-        <script src="lib/jquery.mobile-1.4.0.min.js"></script>
+        <script src="js/lib/jquery.mobile-1.4.0.min.js"></script>
 
-        <!-- charting relate javascrips -->
+         charting relate javascrips 
 
         <script src="charts/globalize.min.js"></script>
         <script src="charts/dx.chartjs.js"></script>
+-->
+
         <title>InvoBill - Products</title>
 
 
@@ -60,7 +62,6 @@
                     <li data-icon="grid"><a href="dashboard.html">Dashboard</a></li>
                     <li data-icon="heart"><a href="clients.html">Clients</a></li>
                     <li data-icon="info"><a href="products.html" class="active">Products</a></li>
-                    <!-- <li data-icon="info"><a href="servise.html">Services</a></li> -->
                     <li data-icon="user"><a href="users.html">Users</a></li>
                     <li data-icon="bullets"><a href="reports.html">Reports</a></li>
                 </ul>
@@ -77,6 +78,7 @@
                         <ul>
                             <li><a href="#tab-one" data-ajax="false" class="tab-border ui-btn-active">All Products</a></li>
                             <li><a href="#tab-two" data-ajax="false" class="tab-border">Due Clients</a></li>
+                            <li><a href="#tab-two" data-ajax="false" class="tab-border">New product</a></li>
                             <li><a href="ajax-content.html" data-ajax="false" class="tab-border">Settings</a></li>
                         </ul>
                     </nav>
@@ -88,22 +90,8 @@
                         <section class="ui-grid-a ui-responsive">
 
 
-<script>
-    
-    var person = {
-    firstName: "Christophe",
-    lastName: "Coenraets",
-    blogURL: "http://coenraets.org"
-};
-var template = "<h1>{{firstName}} {{lastName}}</h1>Blog: {{blogURL}}";
-var html = Mustache.to_html(template, person);
 
 
-$(function () {
-    $('#sampleArea').html(html);
-})
-
-</script>
 
 
 
@@ -113,75 +101,19 @@ $(function () {
                             <article class="ui-block-a">
                                 <div class="ui-body ui-body-d no-bc">
 
-                                <div id="sampleArea">gh</div>
-                                    <ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-filter="true" data-filter-placeholder="Search Clients..." data-inset="true" data-shadow="false" data-corners="false">
-                                        <li><a href="#">
-                                            <img src="img/temp/1.jpg">
-                                        <h2>Broken Bells</h2>
-                                        <p>Broken Bells</p></a>
+                                    <script id="profileTemplate" type="text/template">
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/temp/1.jpg">
+                                                <h2><%= header %> Name: <%= name %></h2>
+                                                <p><%= address %> <br><%= phone %> <%= interests %></p>
+                                            </a>
                                             <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
                                         </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/2.jpg">
-                                        <h2>Warning</h2>
-                                        <p>Hot Chip</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/3.jpg">
-                                        <h2>Wolfgang Amadeus Phoenix</h2>
-                                        <p>Phoenix</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/2.jpg">
-                                        <h2>Warning</h2>
-                                        <p>Hot Chip</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/3.jpg">
-                                        <h2>Wolfgang Amadeus Phoenix</h2>
-                                        <p>Phoenix</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/2.jpg">
-                                        <h2>Warning</h2>
-                                        <p>Hot Chip</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/3.jpg">
-                                        <h2>Wolfgang Amadeus Phoenix</h2>
-                                        <p>Phoenix</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/2.jpg">
-                                        <h2>Warning</h2>
-                                        <p>Hot Chip</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/3.jpg">
-                                        <h2>Wolfgang Amadeus Phoenix</h2>
-                                        <p>Phoenix</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/2.jpg">
-                                        <h2>Warning</h2>
-                                        <p>Hot Chip</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
-                                        <li><a href="#">
-                                            <img src="img/temp/3.jpg">
-                                        <h2>Wolfgang Amadeus Phoenix</h2>
-                                        <p>Phoenix</p></a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-                                        </li>
+                                    </script>
+                                    <ul id="profileBlock" data-role="listview" data-split-icon="gear" data-split-theme="a" data-filter="true" data-filter-placeholder="Search Clients..." data-inset="true" data-shadow="false" data-corners="false">  
                                     </ul>
+
                                 </div>
                             </article>
                             <!-- e block A -->
@@ -220,7 +152,8 @@ $(function () {
             <!-- e main content -->
 
         </div>
-
-        <script type="text/javascript" src="js/chart-init.js"></script>
+<!-- d 
+        <script type="text/javascript" src="js/chart-init.js"></script>-->
+        <script data-main="js/products" src="js/lib/require.js"></script>
     </body>
 </html>

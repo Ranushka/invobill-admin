@@ -264,14 +264,22 @@ border-top: 1px solid rgb(228, 228, 228);
 #main_content .ui-grid-solo>.ui-body{
     background: rgb(246, 246, 246);
     padding:0;
+    padding-bottom: 32px;
 }
 
+#main_content.widgets .ui-grid-b>.ui-block-a,
 #main_content .ui-grid-a>.ui-block-a{
     padding-right: 16px;
 }
+#main_content.widgets .ui-grid-b>.ui-block-c,
 #main_content .ui-grid-a>.ui-block-b{
     padding-left: 16px;
 }
+#main_content.widgets .ui-grid-b>.ui-block-b{
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
 
 
 .ui-header-fixed .user_controll a{

@@ -9,19 +9,16 @@
         <link rel="stylesheet" href="lib/jquery.mobile-1.4.0.min.css" />
         <link rel="stylesheet" href="lib/fonts/fonts.css" />
 
-        <script src="lib/jquery-1.10.2.min.js"></script> 
-        <script src="lib/jquery.mobile-1.4.0.min.js"></script>
 
-        <!-- charting relate javascrips -->
-        <script src="charts/globalize.min.js"></script>
-        <script src="charts/dx.chartjs.js"></script>
+        <script data-main="js/dashboard" src="js/lib/require.js"></script>
+
 
         <title>InvoBill - Dashboard</title>
 
 
     </head>
     <body>
-<!-- --------------invoice---------------------------------------------------------------------------------------------------         -->
+
 
 
         <div data-role="page" data-theme="a" id="invoice">
@@ -68,7 +65,7 @@
                 </ul>
             </nav>
 
-            <div id="main_content" data-role="content" data-theme="a">
+            <div id="main_content" class="widgets" data-role="content" data-theme="a">
 
                 <section class="ui-grid-b ui-responsive">
                     <article class="ui-block-a">
@@ -100,12 +97,13 @@
                         </div>
                     </article>
 
+
                     <article class="ui-block-b">
                         <div class="ui-body ui-body-d">
                             <header>
-                                <h3>Reseved dues</h3>
-                                <a href="#popupNestedfour" data-rel="popup" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-transition="pop">Select</a>
-                                <div data-role="popup" id="popupNestedfour" data-theme="none">
+                                <h3>Tody invoisings</h3>
+                                <a href="#popupNestedfive" data-rel="popup" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-transition="pop">Select</a>
+                                <div data-role="popup" id="popupNestedfive" data-theme="none">
                                     <fieldset data-role="controlgroup" data-mini="true">
                                         <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
                                         <label for="checkbox-v-1a">One</label>
@@ -128,6 +126,7 @@
                             </div>
                         </div>
                     </article>
+
 
                     <article class="ui-block-c">
                         <div class="ui-body ui-body-d">
@@ -279,7 +278,7 @@
             </div>
 
         </div>
-
-        <script type="text/javascript" src="js/chart-init.js"></script>
+<!-- d 
+        <script type="text/javascript" src="js/chart-init.js"></script>-->
     </body>
 </html>
