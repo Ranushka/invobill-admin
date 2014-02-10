@@ -327,7 +327,7 @@ margin-top: 0;
 }
 
 .main_header_weaper{
-    width: calc(100% - 150px);
+    width: calc(~"100% - 150px");
     display: block;
 }
 
@@ -379,8 +379,8 @@ font-weight: 300 !important;
 #logo{
         margin: auto;
     display: block;
-    width: 130px;
-padding-top: 5px;
+width: 80px;
+padding-top: 12px;
 }
 
 
@@ -549,6 +549,7 @@ transition: box-shadow linear .1s;
 
 
 
+
 li.ui-tabs-active > a{
     background-color: rgb(51, 136, 204)!important;
     border-color: rgb(51, 136, 204) !important;
@@ -558,6 +559,31 @@ li.ui-tabs-active > a{
 .tab-border{
     border-color: rgb(51, 136, 204) !important;
 }
+
+
+.list_table_view{
+
+    .name_discription{
+        width: 50%;
+        float: left;
+    }
+    .price_unit{
+        width: 20%;
+        float: left;
+    }
+    .vending_type{
+        width: 10%;
+        float: left;
+    }
+    .vending_availability{
+        width: 10%;
+        float: left;
+    }
+
+    .ui-listview>li{clear: both}
+
+}
+
 
 @media (max-width: 480px){
 

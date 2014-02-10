@@ -23,17 +23,17 @@ $(function()
 	
 
     /*
-    // products listview,
+    // vendings advanced options,
     // item click listen
-    // call - get_by_product()
+    // call - get_by_vending()
     */
     $(document).on('tap', '.product_item', function() {
-
         //remove hilite
-        $('#profile_list_view_wraper li').find('.select_product').removeClass('select_product')
+        $('#vending_list_view_wraper li').find('.select_product').removeClass('select_product')
         $(this).addClass('select_product')
-        get_by_product($(this).attr('id'))
+        get_by_vending($(this).attr('id'))
     });
+
 
 
 
@@ -84,24 +84,31 @@ function get_all_products ()
       parsedTemplate += demoTemplate(exampleValues.company_employees[employee]);
     }
     // The rest of the page is the same as the previous example.
-    $("#profile_list_view_wraper").html(parsedTemplate);
-    $( "#profile_list_view_wraper" ).listview( "refresh" );
+    $("#vending_list_view_wraper").html(parsedTemplate);
+    // $( "#vending_list_view_wraper" ).listview( "refresh" );
 }
-
+/*
+// End get_all_products()
+*/
 
 
 
 
     /*
-    // to view detals about product,
+    // vendings advanced options display on popup,
     // ajax send - product_id
-    // ajax get - product relavent data
+    // ajax get - vendings relavente data
     */
-    function get_by_product (product_id) {
-        // alert(product_id)
+    function get_by_vending (vending_id) {
+
+        $( "#vending_advanced_popup" ).popup( "open" )
+        // alert(vending_id)
 
         
     }
+    /*
+    // End get_by_vending()
+    */
 
 
 
