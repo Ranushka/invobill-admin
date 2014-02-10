@@ -19,9 +19,21 @@ define(["jquery", "jqm", "underscore"], function($) {
 $(function()
 {
 
+    get_all_products ();
+	
 
+    /*
+    // products listview,
+    // item click listen
+    // call - get_by_product()
+    */
+    $(document).on('tap', '.product_item', function() {
 
-	get_all_products ();
+        //remove hilite
+        $('#profile_list_view_wraper li').find('.select_product').removeClass('select_product')
+        $(this).addClass('select_product')
+        get_by_product($(this).attr('id'))
+    });
 
 
 
@@ -53,8 +65,9 @@ function get_all_products ()
 	demoTemplate = _.template(templateText);
     
     $.ajax({
-    	url: "http://localhost/invobill-admin/multiprofiledata.json",
-    	async: false, 
+    	url: "http://localhost/invobill-admin/sampleData/all_product_list.json",
+    	async: false,
+        crossDomain: 'true',
     	dataType: "json",
     	success: function(json)
     	{
@@ -71,9 +84,27 @@ function get_all_products ()
       parsedTemplate += demoTemplate(exampleValues.company_employees[employee]);
     }
     // The rest of the page is the same as the previous example.
-    $("#profileBlock").html(parsedTemplate);
-    $( "#profileBlock" ).listview( "refresh" );
+    $("#profile_list_view_wraper").html(parsedTemplate);
+    $( "#profile_list_view_wraper" ).listview( "refresh" );
 }
+
+
+
+
+
+    /*
+    // to view detals about product,
+    // ajax send - product_id
+    // ajax get - product relavent data
+    */
+    function get_by_product (product_id) {
+        // alert(product_id)
+
+        
+    }
+
+
+
 
 
 

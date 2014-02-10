@@ -33,17 +33,14 @@
 
         <div data-role="page" data-theme="a" id="invoice">
             <!-- s header section -->
-            <header data-role="header" data-theme="a" data-position="fixed" class="header">
-                <div class="ui-block-a logo_wraper">
-                    <a href="#invoice"      id="invoice_nav"    class="" data-transition="none"><img src="img/logo.svg" alt="" id="logo"></a>
-                </div>
-                <div class="ui-block-b main_nav_weaper">
+            <header data-role="header" data-theme="a" data-position="fixed" class="header_section_main">
+                <div class="main_header_weaper">
                     <div class="ui-grid-b ui-responsive">
                         <div class="ui-block-a">
                             <h2 class="page_name">Products</h2>
                         </div>
                         <div class="ui-block-b">
-                            <input type="search" style="height: 44px;" name="search-2" id="search-2" value="">
+                            <input type="search" data-corners="false" style="height: 44px;" name="search-2" id="search-2" value="">
                         </div>
                         <div class="ui-block-c">
                             <!-- <a href="#" class="ui-btn ui-corner-all ui-icon-lock ui-btn-icon-notext logout">Log out</a> -->
@@ -56,14 +53,28 @@
             </header>
             <!-- e header section -->
 
+            <!-- admin_profile_panal  -->
+            <div data-role="panel" id="admin_profile_panal" data-position="right" data-display="overlay" data-theme="a">
+
+                <h3 class="hi_user">Hi, <span>Ranushka</span></h3>
+                <p>This panel is positioned on the right with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+                <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+                <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
+            </div>
+            <!-- /admin_profile_panal -->
+
             <!-- s sidebar navigation -->
             <nav id="main_navigation">
+                <div class="logo_wraper">
+                    <a href="#invoice"      id="invoice_nav"    class="" data-transition="none"><img src="img/logo.svg" alt="" id="logo"></a>
+                </div>
                 <ul data-role="listview">
-                    <li data-icon="grid"><a href="dashboard.html">Dashboard</a></li>
-                    <li data-icon="heart"><a href="clients.html">Clients</a></li>
-                    <li data-icon="info"><a href="products.html" class="active">Products</a></li>
-                    <li data-icon="user"><a href="users.html">Users</a></li>
-                    <li data-icon="bullets"><a href="reports.html">Reports</a></li>
+                    <li data-icon="grid"><a href="dashboard.html" rel="external">Dashboard</a></li>
+                    <li data-icon="heart"><a href="clients.html" rel="external">Clients</a></li>
+                    <li data-icon="info"><a href="products.html" rel="external" class="active">Products</a></li>
+                    <li data-icon="user"><a href="users.html" rel="external">Users</a></li>
+                    <li data-icon="bullets"><a href="reports.html" rel="external">Reports</a></li>
                 </ul>
             </nav>
             <!-- e sidebar navigation -->
@@ -72,46 +83,34 @@
             <div id="main_content" data-role="content" data-theme="a">
 
                 <div data-role="tabs" id="tabs">
-                    
+
                     <!-- s tab navigation -->
                     <nav data-role="navbar">
                         <ul>
-                            <li><a href="#tab-one" data-ajax="false" class="tab-border ui-btn-active">All Products</a></li>
-                            <li><a href="#tab-two" data-ajax="false" class="tab-border">Due Clients</a></li>
-                            <li><a href="#tab-two" data-ajax="false" class="tab-border">New product</a></li>
-                            <li><a href="ajax-content.html" data-ajax="false" class="tab-border">Settings</a></li>
+                            <li><a href="#tab-one" data-ajax="true" class="tab-border ui-btn-active ui-btn-icon-left ui-icon-bars">All Products</a></li>
+                            <li><a href="#tab-two" data-ajax="true" class="tab-border ui-btn-icon-left ui-icon-alert">Due Clients</a></li>
+                            <li><a href="#tab-three" data-ajax="true" class="tab-border ui-btn-icon-left ui-icon-plus">New product</a></li>
+                            <li><a href="#tab-four" data-ajax="true" class="tab-border ui-btn-icon-left ui-icon-gear">Settings</a></li>
                         </ul>
                     </nav>
                     <!-- e tab navigation -->
 
                     <!-- s tab tab-one -->
                     <div id="tab-one" class="ui-body-d ui-content">
-
                         <section class="ui-grid-a ui-responsive">
-
-
-
-
-
-
-
-
-
                             <!-- s block A -->
                             <article class="ui-block-a">
                                 <div class="ui-body ui-body-d no-bc">
-
                                     <script id="profileTemplate" type="text/template">
                                         <li>
-                                            <a href="#">
+                                            <a href="#" class="product_item" id="<%= p_id %>">
                                                 <img src="img/temp/1.jpg">
                                                 <h2><%= header %> Name: <%= name %></h2>
                                                 <p><%= address %> <br><%= phone %> <%= interests %></p>
                                             </a>
-                                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
                                         </li>
                                     </script>
-                                    <ul id="profileBlock" data-role="listview" data-split-icon="gear" data-split-theme="a" data-filter="true" data-filter-placeholder="Search Clients..." data-inset="true" data-shadow="false" data-corners="false">  
+                                    <ul id="profile_list_view_wraper" data-role="listview" data-split-icon="gear" data-split-theme="a" data-filter="true" data-filter-placeholder="Search Clients..." data-inset="true" data-shadow="false" data-corners="false">  
                                     </ul>
 
                                 </div>
@@ -119,32 +118,79 @@
                             <!-- e block A -->
 
                             <!-- s block B -->
-                            <article class="ui-block-b">
+                            <article class="ui-block-b product_detail_view">
+
+                                <div class="ui-grid-a">
+                                    <div class="ui-block-a">
+                                        <img src="img/temp/1.jpg">
+                                        
+                                    </div>
+
+                                    <div class="ui-block-b">
+                                        <h2 style="margin-top:0;">Bob's Profile Name: Bob Robertson</h2>
+                                        <p>1010 Some Street, New York, NY, 10001 <br>(212) 555-1212 Bob likes apples, big ones and floating ones.</p>
+
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="ui-btn ui-btn-inline">Edit</a>
+                                    <a href="#" class="ui-btn ui-btn-inline">Delete</a>
+                                    <a href="#" class="ui-btn ui-btn-inline">Anchor</a>
+                                    <a href="#" class="ui-btn ui-btn-inline">Anchor</a>
+                                </div>
+
+
                                 <div class="ui-body ui-body-d helper_text_oncuting_edge">
                                     <h3>Select client to view more details</h3>
                                     <h4>or</h4>
                                     <h3>Click "cog" icon for moderate details</h3>
                                 </div>
+                          
                             </article>
                             <!-- e block B -->
-
                         </section><!-- /grid-b -->
-
                     </div>
                     <!-- e tab tab-one -->
 
                     <!-- e tab tab-one -->
-                    <div id="tab-two">
+                    <div id="tab-two" class="ui-content">
 
                         <ul data-role="listview" data-inset="true">
                             <li><a href="#">Acura</a></li>
                             <li><a href="#">Audi</a></li>
                             <li><a href="#">BMW</a></li>
+                        </ul>
+
+                    </div>
+                    <!-- e tab tab-two -->
+
+                    <!-- e tab tab-one -->
+                    <div id="tab-three">
+
+                        <ul data-role="listview" data-inset="true">
+                            <li><a href="#">Acura</a></li>
+                            <li><a href="#">Ferrari</a></li>
+                        </ul>
+
+                    </div>
+                    <!-- e tab tab-three -->
+
+                    <!-- e tab tab-one -->
+                    <div id="tab-four">
+
+                        <ul data-role="listview" data-inset="true">
+                            <li><a href="#">Acura</a></li>
+                            <li><a href="#">Audi</a></li>
+                            <li><a href="#">Audi</a></li>
+                            <li><a href="#">BMW</a></li>
+                            <li><a href="#">Cadillac</a></li>
                             <li><a href="#">Cadillac</a></li>
                             <li><a href="#">Ferrari</a></li>
                         </ul>
 
-                    </div><!-- e tab tab-two -->
+                    </div>
+                    <!-- e tab tab-four -->
                   
                 </div>
 

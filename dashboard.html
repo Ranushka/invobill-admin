@@ -22,46 +22,50 @@
 
 
         <div data-role="page" data-theme="a" id="invoice">
-            
-            <div data-role="header" data-theme="a" data-position="fixed" class="header">
-                <div class="ui-block-a logo_wraper">
-                    <a href="#invoice"      id="invoice_nav"    class="" data-transition="none"><img src="img/logo.svg" alt="" id="logo"></a>
-                </div>
-                <div class="ui-block-b main_nav_weaper">
+            <!-- s header section -->
+            <header data-role="header" data-theme="a" data-position="fixed" class="header_section_main">
+                <div class="main_header_weaper">
                     <div class="ui-grid-b ui-responsive">
-                        <div class="ui-block-a"><h2 class="page_name">Dashboard</h2></div>
+                        <div class="ui-block-a">
+                            <h2 class="page_name">Dashboard</h2>
+                        </div>
                         <div class="ui-block-b">
-                            <input type="search" style="height: 44px;" name="search-2" id="search-2" value="">
+                            <input type="search" data-corners="false" style="height: 44px;" name="search-2" id="search-2" value="">
                         </div>
                         <div class="ui-block-c">
-                            <a href="#" class="ui-btn ui-corner-all ui-icon-lock ui-btn-icon-notext logout">Log out</a>
+                            <!-- <a href="#" class="ui-btn ui-corner-all ui-icon-lock ui-btn-icon-notext logout">Log out</a> -->
                             <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right user_controll" data-corners="false">
-                                <a href="#admin_profile_panal" class="ui-btn">Ranushka Goonesekere</a>
+                                <a href="#" class="ui-btn">Ranushka Goonesekere</a>
                             </div>
                         </div>
                     </div><!-- /grid-a -->                    
                 </div>
-            </div>
-
+            </header>
+            <!-- e header section -->
 
             <!-- admin_profile_panal  -->
-    <div data-role="panel" id="admin_profile_panal" data-position="right" data-display="overlay" data-theme="a">
+            <div data-role="panel" id="admin_profile_panal" data-position="right" data-display="overlay" data-theme="a">
 
-        <h3 class="hi_user">Hi, <span>Ranushka</span></h3>
-        <p>This panel is positioned on the right with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
-        <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-        <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+                <h3 class="hi_user">Hi, <span>Ranushka</span></h3>
+                <p>This panel is positioned on the right with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+                <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+                <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
 
-    </div><!-- /admin_profile_panal -->
+            </div>
+            <!-- /admin_profile_panal -->
 
+            <!-- s sidebar navigation -->
             <nav id="main_navigation">
+                <div class="logo_wraper">
+                    <a href="#invoice"      id="invoice_nav"    class="" data-transition="none"><img src="img/logo.svg" alt="" id="logo"></a>
+                </div>
                 <ul data-role="listview">
-                    <li data-icon="grid"><a href="dashboard.html" class="active">Dashboard</a></li>
-                    <li data-icon="heart"><a href="clients.html">Clients</a></li>
-                    <li data-icon="info"><a href="products.html">Products</a></li>
-                    <li data-icon="info"><a href="servise.html">Servises</a></li>
-                    <li data-icon="user"><a href="users.html">Users</a></li>
-                    <li data-icon="bullets"><a href="reports.html">Reports</a></li>
+                    <li data-icon="grid"><a href="dashboard.html" class="active" rel="external">Dashboard</a></li>
+                    <li data-icon="heart"><a href="clients.html" rel="external">Clients</a></li>
+                    <li data-icon="info"><a href="products.html" rel="external">Products</a></li>
+                    <li data-icon="info"><a href="servise.html" rel="external">Servises</a></li>
+                    <li data-icon="user"><a href="users.html" rel="external">Users</a></li>
+                    <li data-icon="bullets"><a href="reports.html" rel="external">Reports</a></li>
                 </ul>
             </nav>
 
