@@ -103,10 +103,9 @@
                             <!-- s block A -->
                             <article class="ui-grid-solo">
                                 <div class="ui-body ui-body-d no-bc list_table_view">
-                                    <script id="profileTemplate" type="text/template">
-                                        <li>
-                                            <a href="#" data-rel="popup" class="product_item" id="<%= p_id %>">
-                                                <img src="img/temp/1.jpg">
+                                       <!--  <li>
+                                            <a href="#" data-rel="popup" class="product_item" >
+                                                
                                                 <div class="name_discription">
                                                     <h2>Name: <%= name %></h2>
                                                     <p><%= address %> <br><%= phone %> <%= interests %></p>
@@ -121,8 +120,8 @@
                                                     <span><%= vending_type %></span>
                                                 </div>
                                             </a>
-                                        </li>
-                                    </script>
+                                        </li> -->
+                                    
 
 
                                     <div data-role="popup" data-position-to="window" data-transition="pop" id="vending_advanced_popup" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
@@ -137,8 +136,50 @@
                                         </div>
                                     </div>
 
+                            <form>
+                                <input id="filterTable-input" data-type="search">
+                            </form>
+                            <table 
+                                data-role="table" 
+                                id="vender_list_table" 
+                                data-mode="columntoggle" 
+                                class="ui-body-d ui-shadow table-stripe ui-responsive" 
+                                data-column-btn-theme="b" 
+                                data-column-btn-text="Columns to display..." 
+                                data-column-popup-theme="a" 
+                                data-filter="true" 
+                                data-input="#filterTable-input">
 
-                                    <ul id="vending_list_view_wraper" data-role="listview" data-split-icon="gear" data-split-theme="a" data-filter="true" data-filter-placeholder="Search Products..." data-inset="true" data-shadow="false" data-corners="false">  
+                                <thead>
+                                    <tr>
+                                        <th data-priority="1">Rank</th>
+                                        <th data-priority="1">Image</th>
+                                        <th data-priority="persist">Movie Title</th>
+                                        <th data-priority="2">Year</th>
+                                        <th data-priority="3">Rating</th>
+                                        <th data-priority="4">Reviews</th>
+                                        <th data-priority="4">Reviews</th>
+                                    </tr>
+                                </thead>
+
+                                <script id="profileTemplate" type="text/template">
+                                    <tr id="<%= p_id %>">
+                                        <th><%= p_id %></th>
+                                        <td class="vending_img_sm"><img src="img/temp/1.jpg"></td>
+                                        <td><%= name %></td>
+                                        <td><%= address %> <br><%= phone %> <%= interests %></td>
+                                        <td class="price_unit"><span class="unit_price"><%= price %></span><span class="unit_price_type"> Rs/=</span></td>
+                                        <td class="vending_availability"><span><%= vending_availability %></span></td>
+                                        <td class="vending_type"><span><%= vending_type %></span></td>
+                                    </tr>
+                                </script>
+
+                                <tbody id="vending_list_view_wraper">
+                                </tbody>
+                            </table>
+
+
+                                    <ul  data-role="listview" data-split-icon="gear" data-split-theme="a" data-filter="true" data-filter-placeholder="Search Products..." data-inset="true" data-shadow="false" data-corners="false">  
                                     </ul>
 
                                 </div>
@@ -237,6 +278,6 @@
         </div>
 <!-- d 
         <script type="text/javascript" src="js/chart-init.js"></script>-->
-        <script data-main="js/products" src="js/lib/require.js"></script>
+        <script data-main="js/vending" src="js/lib/require.js"></script>
     </body>
 </html>

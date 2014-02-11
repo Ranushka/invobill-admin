@@ -85,7 +85,7 @@ function get_all_products ()
     }
     // The rest of the page is the same as the previous example.
     $("#vending_list_view_wraper").html(parsedTemplate);
-    // $( "#vending_list_view_wraper" ).listview( "refresh" );
+    $( "#vender_list_table" ).table( "refresh" );
 }
 /*
 // End get_all_products()
