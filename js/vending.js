@@ -29,7 +29,7 @@ $(function()
     */
     $(document).on('tap', '.product_item', function() {
         //remove hilite
-        $('#vending_list_view_wraper li').find('.select_product').removeClass('select_product')
+        $('#vending_list_view_wraper > tr.select_product').removeClass('select_product')
         $(this).addClass('select_product')
         get_by_vending($(this).attr('id'))
     });
@@ -48,18 +48,18 @@ $(function()
 function get_all_products ()
 {
 
-	$(window).bind("online", function()
-	{
-    });
+	// $(window).bind("online", function()
+	// {
+ //    });
 
-    if (navigator.offline) {
-        alert("online")
-    	// I'm online so submit the form.
-	}
+ //    if (navigator.offline) {
+ //        alert("online")
+ //    	// I'm online so submit the form.
+	// }
 
 
     // This code is unchanged, except we're getting a different JSON file.
-    var exampleValues = {},
+    var vendingValues = {},
 	parsedTemplate = "",
 	templateText = $('#profileTemplate').html(),
 	demoTemplate = _.template(templateText);
@@ -72,20 +72,20 @@ function get_all_products ()
     	success: function(json)
     	{
 
-    		exampleValues = json;
+    		vendingValues = json;
     		
     	}
     });
     // The for loop runs the values for each employee through the 
     // demoTemplate function, and builds the parsedTemplate HTML 
     // from the results.
-    for (employee in exampleValues.company_employees) 
+    for (employee in vendingValues.company_employees) 
     {
-      parsedTemplate += demoTemplate(exampleValues.company_employees[employee]);
+      parsedTemplate += demoTemplate(vendingValues.company_employees[employee]);
     }
     // The rest of the page is the same as the previous example.
     $("#vending_list_view_wraper").html(parsedTemplate);
-    $( "#vender_list_table" ).table( "refresh" );
+    // $( "#vender_list_table" ).table( "refresh" );
 }
 /*
 // End get_all_products()
