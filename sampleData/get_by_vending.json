@@ -1,10 +1,7 @@
 {
-    "p_id": "Title name will go here",
-    "name": "Bob Robertson",
-    "price": "15000",
-    "vending_type": "servise",
-    "vending_availability": "yes",
-    "address": "1010 Some Street, New York, NY, 10001",
-    "phone": "(212) 555-1212",
-    "interests": "Bob likes apples, big ones and floating ones."
+    "vending_item_name": "Title name will go here",
+    "vending_item_discription": "Bob Robertson",
+    "vending_item_price": "15000",
+    "vending_item_vending_type": "product",
+    "vending_item_avalability": "yes"
 }

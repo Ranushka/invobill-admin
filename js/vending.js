@@ -19,6 +19,10 @@ requirejs.config({
 // Load the main app module to start the app
 define(["jquery", "jqm", "underscore", "coman"], function($) {
 
+
+/***************
+// S DOCUMENT READDY
+****************/
 $(function()
 {
 
@@ -26,9 +30,9 @@ $(function()
 	
 
     /*
-    // vendings advanced options,
-    // item click listen
-    // call - get_by_vending()
+        // vendings advanced options,
+        // item click listen
+        // call - get_by_vending()
     */
     $(document).on('tap', '.product_item', function() {
         //remove hilite
@@ -46,7 +50,47 @@ $(function()
 
 
 
+/***************
+// S EVANT LISTENERS
+****************/
 
+/*
+    // listn to .make_form_editable tap evant
+    // calling to make_form_editable ()
+*/
+$(document).on('tap', '.make_form_editable', function() {
+    make_form_editable ();
+});
+
+
+/*
+    // listn to .make_form_save_data tap evant
+    // calling to make_form_save_data ()
+*/
+$(document).on('tap', '.make_form_save_data', function() {
+    make_form_desabled ()
+});
+
+
+/*
+    // vendings advanced options,
+    // item click listen
+    // call - get_by_vending()
+*/
+$("#vending_advanced_popup").on("popupafterclose", function() {
+    // @ coman-func.js
+    make_form_desabled ()
+});
+
+
+
+
+
+
+
+/***************
+// S FUNCTIONS
+****************/
 
 function get_all_products ()
 {
@@ -88,7 +132,7 @@ function get_all_products ()
     }
     // The rest of the page is the same as the previous example.
     $("#vending_list_view_wraper").html(parsedTemplate);
-    $( "#vender_list_table" ).table( "refresh" );
+    // $( "#vender_list_table" ).table( "refresh" );
 }
 /*
 // End get_all_products()
@@ -98,18 +142,17 @@ function get_all_products ()
 
 
     /*
-    // vendings advanced options display on popup,
-    // ajax send - product_id
-    // ajax get - vendings relavente data
+        // vendings advanced options display on popup,
+        // ajax send - product_id
+        // ajax get - vendings relavente data
     */
     function get_by_vending (vending_id) {
 
 
 
-    var vendingValues = {},
-    parsedTemplate = "",
-    templateText = $('#vending_advanced_popup_Template').html(),
-    demoTemplate = _.template(templateText);
+    var vendingValues = {};
+    // templateText = $('#vending_advanced_popup_Template').html(),
+    // demoTemplate = _.template(templateText);
     
     $.ajax({
         url: "http://localhost/invobill-admin/sampleData/get_by_vending.json",
@@ -121,21 +164,21 @@ function get_all_products ()
 
             vendingValues = json;
             
+            // assign Valus
+            $( "#vending_item_title" ).html( vendingValues.vending_item_name )
+            $( "#vending_item_name" ).val( vendingValues.vending_item_name )
+            $( "#vending_item_discription" ).val( vendingValues.vending_item_discription )
+            $( "#vending_item_price" ).val( vendingValues.vending_item_price )
+            $( "#vending_item_vending_type" ).val( vendingValues.vending_item_vending_type ).attr("selected", "selected").trigger('change')
+            $( "#vending_item_avalability" ).val(vendingValues.vending_item_avalability).attr("selected", "selected").trigger('change')
+
+
+
         }
     });
-    
-    // for (employee in vendingValues.company_employees) 
-    // {
-    //   parsedTemplate += demoTemplate(vendingValues.company_employees[employee]);
-    // }    
-
-
-    // The rest of the page is the same as the previous example.
-    $("#vending_advanced_popup .ui-content").html(demoTemplate(vendingValues));
 
 
         $( "#vending_advanced_popup" ).popup( "open" )
-        // alert(vending_id)
 
         
     }

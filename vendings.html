@@ -118,15 +118,15 @@
                     data-filter="true" 
                     data-input="#filterTable-input">
 
-                    <thead>
+                    <thead data-theme="a">
                       <tr>
-                        <th data-priority="1">#</th>
-                        <th data-priority="1">Image</th>
+                        <th data-priority="6">#</th>
+                        <th data-priority="3">Image</th>
                         <th data-priority="persist">Name</th>
                         <th data-priority="2">Discription</th>
-                        <th data-priority="3">Unit Price</th>
+                        <th data-priority="2">Unit Price</th>
                         <th data-priority="4">Avalability</th>
-                        <th data-priority="4">Vending Type</th>
+                        <th data-priority="5">Vending Type</th>
                       </tr>
                     </thead>
 
@@ -142,7 +142,6 @@
                       </tr>
                     </script>
 
-
                     <tbody id="vending_list_view_wraper">
                     </tbody>
                   </table>
@@ -152,8 +151,11 @@
   <div data-role="popup" data-position-to="window" data-transition="pop" id="vending_advanced_popup" data-overlay-theme="b" data-theme="a" data-dismissible="false" class="cus_popup">
     <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 
-    <script id="vending_advanced_popup_Template" type="text/template">
-      <h3 class="ui-title"><%= p_id %></h3>
+
+
+
+    <div role="main" class="ui-content" style="padding:20px;">
+    <h3 class="ui-title" id="vending_item_title"><%= p_id %></h3>
       <hr>
       <form class="ui-mini">
 
@@ -163,18 +165,18 @@
             <table class="form_table">
               <tr>
                 <td class="lable_text_td"><label for="textinput-fc">Name:</label></td>
-                <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="textinput-fc" placeholder="Text input" value="fdg"></td>
+                <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="vending_item_name" placeholder="Text input" value="fdg"></td>
               </tr>
               <tr>
                 <td class="lable_text_td"><label for="textinput-fc">Price:</label></td>
-                <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="textinput-fc" placeholder="Text input" value="gfd"></td>
+                <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="vending_item_price" placeholder="Text input" value="gfd"></td>
               </tr>
               <tr>
                 <td class="lable_text_td"><label for="textinput-fc">Avalability:</label></td>
                 <td>
-                  <select disabled="disabled" class="attr_disabled" name="slider-flip-m" id="slider-flip-m" data-role="slider">
-                    <option value="off">No</option>
-                    <option value="on" selected="">Yes</option>
+                  <select name="vending_item_avalability" disabled="disabled" class="attr_disabled" id="vending_item_avalability">
+                    <option name="yes" value="yes">Yes</option>
+                    <option name="no" value="no">No</option>
                   </select>
                 </td>
               </tr>
@@ -184,19 +186,16 @@
             <table class="form_table">
               <tr>
                 <td class="lable_text_td"><label for="textinput-fc">Discription:</label></td>
-                <td><input cols="40" rows="8" name="textarea" disabled="disabled" class="attr_disabled" id="textarea" placeholder="Text input" value=""></td>
+                <td><input cols="40" rows="8" name="textarea" disabled="disabled" class="attr_disabled" id="vending_item_discription" placeholder="Text input" value=""></td>
               </tr>
               <tr>
                 <td class="lable_text_td"><label for="textinput-fc">Vending Type:</label></td>
                 <td>
-                  <fieldset data-role="controlgroup">
-                    <input type="radio" disabled="disabled" class="attr_disabled" name="ad_ven_vending_type_radio" id="ad_ven_servise_radio" checked="">
-                    <label for="ad_ven_servise_radio">Servise</label>
-                    <input type="radio" disabled="disabled" class="attr_disabled" name="ad_ven_vending_type_radio" id="ad_ven_product_radio">
-                    <label for="ad_ven_product_radio">Product</label>
-                    <input type="radio" disabled="disabled" class="attr_disabled" name="ad_ven_vending_type_radio" id="ad_ven_maintenance_radio">
-                    <label for="ad_ven_maintenance_radio">maintenance</label>
-                  </fieldset>
+                  <select name="vending_item_vending_type" disabled="disabled" class="attr_disabled" id="vending_item_vending_type">
+                    <option name="servise" value="servise">Servise</option>
+                    <option name="product" value="product">Product</option>
+                    <option name="maintenance" value="maintenance">Maintenance</option>
+                  </select>
                 </td>
               </tr>
             </table>
@@ -209,10 +208,6 @@
           <div class="ui-block-c"><a href="#" data-rel="back" class="ui-btn">Close</a></div>
         </fieldset>
       </form>
-    </script>
-
-
-    <div role="main" class="ui-content" style="padding:20px;">
     </div>
   </div>
   <!-- e vending advanced popup -->
