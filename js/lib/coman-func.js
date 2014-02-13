@@ -1,4 +1,13 @@
+/***************
+// S EVENT LISTENERS
+****************/
 
+
+
+
+/***************
+// S FUNCTIONS
+****************/
 
 /*
 	// 1 - making editable felds 
@@ -10,8 +19,8 @@ function make_form_editable() {
 	$(".attr_disabled").prop('disabled',false);
 	$(".attr_disabled").parent().removeClass('ui-state-disabled');
 
-	$(".make_form_editable").toggleClass('hide');
-	$(".make_form_save_data").toggleClass('hide');
+	 $( ".make_form_save_data" ).removeClass('ui-disabled');
+    $(".make_form_save_data").prop('disabled',false);
 }
 /*
 // end make_form_editable ()
@@ -28,8 +37,8 @@ function make_form_desabled () {
 	$(".attr_disabled").prop('disabled','disabled');
 	$(".attr_disabled").parent().addClass('ui-state-disabled');
 
-	$(".make_form_editable").toggleClass('hide');
-	$(".make_form_save_data").toggleClass('hide');
+	$( ".make_form_save_data" ).addClass('ui-disabled');
+    $(".make_form_save_data").prop('disabled','disabled');
 }
 /*
 // end make_form_save_data ()

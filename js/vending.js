@@ -51,15 +51,17 @@ $(function()
 
 
 /***************
-// S EVANT LISTENERS
+// S EVENT LISTENERS
 ****************/
 
 /*
     // listn to .make_form_editable tap evant
     // calling to make_form_editable ()
 */
-$(document).on('tap', '.make_form_editable', function() {
+$(document).on('click', '.make_form_editable', function() {
     make_form_editable ();
+   
+    // $( ".make_form_save_data" ).button( "enable" );
 });
 
 
@@ -80,6 +82,8 @@ $(document).on('tap', '.make_form_save_data', function() {
 $("#vending_advanced_popup").on("popupafterclose", function() {
     // @ coman-func.js
     make_form_desabled ()
+    // $( ".make_form_save_data" ).addClass('ui-disabled');
+    // $( ".make_form_save_data" ).button( "disable" );
 });
 
 

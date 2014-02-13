@@ -151,9 +151,6 @@
   <div data-role="popup" data-position-to="window" data-transition="pop" id="vending_advanced_popup" data-overlay-theme="b" data-theme="a" data-dismissible="false" class="cus_popup">
     <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 
-
-
-
     <div role="main" class="ui-content" style="padding:20px;">
     <h3 class="ui-title" id="vending_item_title"><%= p_id %></h3>
       <hr>
@@ -162,7 +159,7 @@
         <div class="ui-grid-a">
           <div class="ui-block-a">
 
-            <table class="form_table">
+            <table class="form_table cus_disabled">
               <tr>
                 <td class="lable_text_td"><label for="textinput-fc">Name:</label></td>
                 <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="vending_item_name" placeholder="Text input" value="fdg"></td>
@@ -183,7 +180,7 @@
             </table>
           </div>
           <div class="ui-block-b">
-            <table class="form_table">
+            <table class="form_table cus_disabled">
               <tr>
                 <td class="lable_text_td"><label for="textinput-fc">Discription:</label></td>
                 <td><input cols="40" rows="8" name="textarea" disabled="disabled" class="attr_disabled" id="vending_item_discription" placeholder="Text input" value=""></td>
@@ -202,10 +199,11 @@
           </div>
         </div><!-- /grid-a -->
         <hr>
-        <fieldset class="ui-grid-b">
+        <fieldset class="ui-grid-c">
           <div class="ui-block-a"><p style="text-align:center"><a href="#">Delete</a></p></div>
-          <div class="ui-block-b"><a href="#" class="ui-btn make_form_editable">Edit</a><a href="#" class="ui-btn make_form_save_data hide">Save</a></div>
-          <div class="ui-block-c"><a href="#" data-rel="back" class="ui-btn">Close</a></div>
+          <div class="ui-block-b"><a href="#" class="ui-btn make_form_editable">Edit</a></div>
+          <div class="ui-block-c"><button href="#" disabled="disabled" class="ui-btn make_form_save_data ui-disabled">Save</button></div>
+          <div class="ui-block-d"><a href="#" data-rel="back" class="ui-btn">Close</a></div>
         </fieldset>
       </form>
     </div>
