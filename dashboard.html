@@ -6,11 +6,13 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1"/>
 
-        <link rel="stylesheet" href="lib/jquery.mobile-1.4.0.min.css" />
-        <link rel="stylesheet" href="lib/fonts/fonts.css" />
+  <link rel="stylesheet" href="lib/css/jquery.mobile-1.4.1.css" />
+  <link rel="stylesheet" href="lib/css/icomoon/icomoon.css" />
+
+  <link rel="stylesheet" href="lib/fonts/fonts.css" />
 
 
-        <script data-main="js/dashboard" src="js/lib/require.js"></script>
+        
 
 
         <title>InvoBill - Dashboard</title>
@@ -60,15 +62,14 @@
                     <a href="#invoice"      id="invoice_nav"    class="" data-transition="none"><img src="img/logo.svg" alt="" id="logo"></a>
                 </div>
                 <ul data-role="listview">
-                    <li data-icon="grid"><a href="dashboard.html" class="active" rel="external">Dashboard</a></li>
+                    <li data-icon="dashboard"><a class="active" href="dashboard.html" rel="external">Dashboard</a></li>
                     <li data-icon="heart"><a href="clients.html" rel="external">Clients</a></li>
-                    <li data-icon="info"><a href="vendings.html" rel="external">Vendings</a></li>
-                    <li data-icon="user"><a href="users.html" rel="external">Users</a></li>
-                    <li data-icon="tag"><a href="recipes.html" rel="external">Recipes</a></li>
+                    <li data-icon="cart-2"><a href="vendings.html" rel="external">Vendings</a></li>
+                    <li data-icon="users"><a href="users.html" rel="external">Users</a></li>
+                    <li data-icon="newspaper"><a href="recipes.html" rel="external">Recipes</a></li>
                     <li data-icon="clock"><a href="leads.html" rel="external">Leads</a></li>
-                    <li data-icon="bullets"><a href="reports.html" rel="external">Reports</a></li>
-
-                </ul>
+                    <li data-icon="stats-up"><a href="reports.html" rel="external">Reports</a></li>
+                  </ul>
             </nav>
 
             <div id="main_content" class="widgets" data-role="content" data-theme="a">
@@ -284,7 +285,10 @@
             </div>
 
         </div>
-<!-- d 
-        <script type="text/javascript" src="js/chart-init.js"></script>-->
+
+
+        <script data-main="js/dashboard" src="js/lib/require.js"></script>
+
+        
     </body>
 </html>

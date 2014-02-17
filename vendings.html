@@ -6,23 +6,25 @@
   <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
   <meta name="viewport" content="user-scalable=no, initial-scale=1"/>
 
-  <link rel="stylesheet" href="lib/jquery.mobile-1.4.0.min.css" />
+  <!-- <link rel="stylesheet" href="lib/jquery.mobile-1.4.0.min.css" /> -->
+  <link rel="stylesheet" href="lib/css/jquery.mobile-1.4.1.css" />
+  <link rel="stylesheet" href="lib/css/icomoon/icomoon.css" />
+
   <link rel="stylesheet" href="lib/fonts/fonts.css" />
 
+  <title>InvoBill - Products</title>
+  
+  <!-- if javascript is disabled -->
+  <noscript>
+    <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ShowErrorPage.html">
+  </noscript>
 
-<!-- s 
-        <script src="js/lib/jquery-1.10.2.min.js"></script> 
-
-        <script src="js/lib/jquery.mobile-1.4.0.min.js"></script>
-
-         charting relate javascrips 
-
-        <script src="charts/globalize.min.js"></script>
-        <script src="charts/dx.chartjs.js"></script>
-      -->
-
-      <title>InvoBill - Products</title>
-
+  <style type="text/css" media="screen">
+    /*stop display witout renderd page*/
+    [data-role]{
+      opacity: 0;
+    }
+  </style>
 
     </head>
     <body>
@@ -37,7 +39,7 @@
           <div class="main_header_weaper">
             <div class="ui-grid-b ui-responsive">
               <div class="ui-block-a">
-                <h2 class="page_name">Products</h2>
+                <h2 class="page_name">Vendings</h2>
               </div>
               <div class="ui-block-b">
                 <input type="search" data-corners="false" style="height: 44px;" name="search-2" id="search-2" value="">
@@ -69,14 +71,15 @@
           <div class="logo_wraper">
             <a href="#invoice"      id="invoice_nav"    class="" data-transition="none"><img src="img/logo.svg" alt="" id="logo"></a>
           </div>
+
           <ul data-role="listview">
-            <li data-icon="grid"><a href="dashboard.html" rel="external">Dashboard</a></li>
+            <li data-icon="dashboard"><a href="dashboard.html" rel="external">Dashboard</a></li>
             <li data-icon="heart"><a href="clients.html" rel="external">Clients</a></li>
-            <li data-icon="info"><a href="vendings.html" rel="external" class="active">Vendings</a></li>
-            <li data-icon="user"><a href="users.html" rel="external">Users</a></li>
-            <li data-icon="tag"><a href="recipes.html" rel="external">Recipes</a></li>
+            <li data-icon="cart-2"><a href="vendings.html" rel="external" class="active">Vendings</a></li>
+            <li data-icon="users"><a href="users.html" rel="external">Users</a></li>
+            <li data-icon="newspaper"><a href="recipes.html" rel="external">Recipes</a></li>
             <li data-icon="clock"><a href="leads.html" rel="external">Leads</a></li>
-            <li data-icon="bullets"><a href="reports.html" rel="external">Reports</a></li>
+            <li data-icon="stats-up"><a href="reports.html" rel="external">Reports</a></li>
           </ul>
         </nav>
         <!-- e sidebar navigation -->
@@ -88,10 +91,9 @@
             <!-- s tab navigation -->
             <nav data-role="navbar">
               <ul>
-                <li><a href="#tab-one" data-ajax="true" class="tab-border ui-btn-active ui-btn-icon-left ui-icon-bars">All Products</a></li>
-                <li><a href="#tab-two" data-ajax="true" class="tab-border ui-btn-icon-left ui-icon-alert">Due Clients</a></li>
-                <li><a href="#tab-three" data-ajax="true" class="tab-border ui-btn-icon-left ui-icon-plus">New product</a></li>
-                <li><a href="#tab-four" data-ajax="true" class="tab-border ui-btn-icon-left ui-icon-gear">Settings</a></li>
+                <li><a href="#tab-one" data-ajax="true" class="tab-border ui-btn-active ui-btn-icon-left ui-icon-bars">All Vendings</a></li>
+                <li><a href="#tab-three" data-ajax="true" class="tab-border ui-btn-icon-left ui-icon-plus">Add New Vending</a></li>
+                <li><a href="#tab-four" data-ajax="true" class="tab-border ui-btn-icon-left ui-icon-wrench">Vending Settings</a></li>
               </ul>
             </nav>
             <!-- e tab navigation -->
@@ -105,7 +107,7 @@
 
                     <!-- s vending table and search -->
                     <form>
-                      <input id="filterTable-input" data-type="search">
+                      <input id="filterTable-input" placeholder="Search Products" data-type="search">
                     </form>
                     <table 
                     data-role="table" 
@@ -113,7 +115,7 @@
                     data-mode="columntoggle" 
                     class="ui-body-d ui-shadow table-stripe ui-responsive" 
                     data-column-btn-theme="b" 
-                    data-column-btn-text="Columns to display..." 
+                    data-column-btn-text="[+]" 
                     data-column-popup-theme="a" 
                     data-filter="true" 
                     data-input="#filterTable-input">
@@ -126,7 +128,7 @@
                         <th data-priority="2">Discription</th>
                         <th data-priority="2">Unit Price</th>
                         <th data-priority="4">Avalability</th>
-                        <th data-priority="5">Vending Type</th>
+                        <th data-priority="5" style="padding-right: 35px;">Vending Type</th>
                       </tr>
                     </thead>
 
@@ -146,145 +148,31 @@
                     </tbody>
                   </table>
                   <!-- e vending table and search -->
-
-  <!-- s vending advanced popup -->
-  <div data-role="popup" data-position-to="window" data-transition="pop" id="vending_advanced_popup" data-overlay-theme="b" data-theme="a" data-dismissible="false" class="cus_popup">
-    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-
-    <div role="main" class="ui-content" style="padding:20px;">
-    <h3 class="ui-title" id="vending_item_title"><%= p_id %></h3>
-      <hr>
-      <form class="ui-mini">
-
-        <div class="ui-grid-a">
-          <div class="ui-block-a">
-
-            <table class="form_table cus_disabled">
-              <tr>
-                <td class="lable_text_td"><label for="textinput-fc">Name:</label></td>
-                <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="vending_item_name" placeholder="Text input" value="fdg"></td>
-              </tr>
-              <tr>
-                <td class="lable_text_td"><label for="textinput-fc">Price:</label></td>
-                <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="vending_item_price" placeholder="Text input" value="gfd"></td>
-              </tr>
-              <tr>
-                <td class="lable_text_td"><label for="textinput-fc">Avalability:</label></td>
-                <td>
-                  <select name="vending_item_avalability" disabled="disabled" class="attr_disabled" id="vending_item_avalability">
-                    <option name="yes" value="yes">Yes</option>
-                    <option name="no" value="no">No</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div class="ui-block-b">
-            <table class="form_table cus_disabled">
-              <tr>
-                <td class="lable_text_td"><label for="textinput-fc">Discription:</label></td>
-                <td><input cols="40" rows="8" name="textarea" disabled="disabled" class="attr_disabled" id="vending_item_discription" placeholder="Text input" value=""></td>
-              </tr>
-              <tr>
-                <td class="lable_text_td"><label for="textinput-fc">Vending Type:</label></td>
-                <td>
-                  <select name="vending_item_vending_type" disabled="disabled" class="attr_disabled" id="vending_item_vending_type">
-                    <option name="servise" value="servise">Servise</option>
-                    <option name="product" value="product">Product</option>
-                    <option name="maintenance" value="maintenance">Maintenance</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div><!-- /grid-a -->
-        <hr>
-        <fieldset class="ui-grid-c">
-          <div class="ui-block-a"><p style="text-align:center"><a href="#">Delete</a></p></div>
-          <div class="ui-block-b"><a href="#" class="ui-btn make_form_editable">Edit</a></div>
-          <div class="ui-block-c"><button href="#" disabled="disabled" class="ui-btn make_form_save_data ui-disabled">Save</button></div>
-          <div class="ui-block-d"><a href="#" data-rel="back" class="ui-btn">Close</a></div>
-        </fieldset>
-      </form>
-    </div>
-  </div>
-  <!-- e vending advanced popup -->
-
-
-
                 </div>
               </article>
-              <!-- e block A -->
-
-              <!-- s block B -->
-
-                            <!-- <article class="ui-block-b product_detail_view">
-
-                                <div class="ui-grid-a">
-                                    <div class="ui-block-a">
-                                        <img src="img/temp/1.jpg">
-                                        
-                                    </div>
-
-                                    <div class="ui-block-b">
-                                        <h2 style="margin-top:0;">Bob's Profile Name: Bob Robertson</h2>
-                                        <p>1010 Some Street, New York, NY, 10001 <br>(212) 555-1212 Bob likes apples, big ones and floating ones.</p>
-
-                                    </div>
-                                </div>
-
-                                <div class="ui-grid-b">
-                                    <div class="ui-block-a">
-                                        <a href="#" class="ui-btn ui-mini">Edit</a>
-                                    </div>
-                                    <div class="ui-block-b">
-                                        <a href="#" class="ui-btn ui-mini">Deactivate</a>
-                                    </div>
-                                    <div class="ui-block-c">
-                                        <a href="#" class="ui-btn ui-mini">Delete</a>
-                                    </div>
-                                </div>                          
-                              </article> -->
 
 
-                                <!-- 
-                                <div class="ui-body ui-body-d helper_text_oncuting_edge">
-                                    <h3>Select client to view more details</h3>
-                                    <h4>or</h4>
-                                    <h3>Click "cog" icon for moderate details</h3>
-                                  </div> -->
-
-
+     
 
                                   <!-- e block B -->
                                 </section><!-- /grid-b -->
                               </div>
                               <!-- e tab tab-one -->
 
-                              <!-- e tab tab-one -->
-                              <div id="tab-two" class="ui-content">
+                              
 
-                                <ul data-role="listview" data-inset="true">
-                                  <li><a href="#">Acura</a></li>
-                                  <li><a href="#">Audi</a></li>
-                                  <li><a href="#">BMW</a></li>
-                                </ul>
+                              <!-- e tab tab-three -->
+                              <div id="tab-three" class="ui-body-d ui-content">
 
-                              </div>
-                              <!-- e tab tab-two -->
-
-                              <!-- e tab tab-one -->
-                              <div id="tab-three">
-
-                                <ul data-role="listview" data-inset="true">
-                                  <li><a href="#">Acura</a></li>
-                                  <li><a href="#">Ferrari</a></li>
+                                <ul data-role="listview" data-inset="true" style="margin: 0;">
+                                  <li><a href="#vending_detail_page">Add one record</a></li>
+                                  <li><a href="#">Add bulk recrds</a></li>
                                 </ul>
 
                               </div>
                               <!-- e tab tab-three -->
 
-                              <!-- e tab tab-one -->
+                              <!-- s tab tab-four -->
                               <div id="tab-four">
 
                                 <ul data-role="listview" data-inset="true">
@@ -306,8 +194,108 @@
                           <!-- e main content -->
 
                         </div>
-<!-- d 
-  <script type="text/javascript" src="js/chart-init.js"></script>-->
+
+
+<div data-role="dialog" id="vending_detail_page" data-dom-cache="true" data-close-btn="none">
+
+  <header data-role="header" data-theme="a" data-position="fixed" class="header_section_main">
+    <div class="main_header_weaper">
+      <div class="ui-grid-b ui-responsive">
+        <div class="ui-block-a">
+          <h2 class="page_name">Vendings</h2>
+        </div>
+        <div class="ui-block-b">
+          
+        </div>
+        <div class="ui-block-c">
+          <!-- <a href="#" class="ui-btn ui-corner-all ui-icon-lock ui-btn-icon-notext logout">Log out</a> -->
+
+        </div>
+      </div><!-- /grid-a -->                    
+    </div>
+  </header>
+
+<!-- s data save conferm box -->
+<div data-role="popup" data-position-to="window" data-transition="pop" id="conferm_data_save" data-overlay-theme="b" data-theme="a" data-dismissible="false">
+  <div data-role="header" data-theme="a" class="ui-corner-top">
+    <h1>Not saving data?</h1>
+  </div>
+  <div role="main" class="ui-corner-bottom ui-content">
+    <h3 class="ui-title">Are you sure you want to save data?</h3>
+    <p>This action cannot be undone.</p>
+
+  </div>
+
+  <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><a href="#" id="conferm_data_cancel_btn" data-role="button" >Do Not save data</a></div>
+        <div class="ui-block-b"><a href="#" id="conferm_data_save_btn" data-role="button" >Let me save data</a></div>
+  </fieldset>
+</div>
+<!-- e data save conferm box -->
+
+
+  <div role="main" class="ui-content" style="padding:20px 40px">
+    <h3 class="ui-title" id="vending_item_title"></h3>
+    <hr>
+    <form class="ui-mini">
+
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+
+          <table class="form_table cus_disabled">
+            <tr>
+              <td class="lable_text_td"><label for="textinput-fc">Name:</label></td>
+              <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="vending_item_name" placeholder="Text input" value="fdg"></td>
+            </tr>
+            <tr>
+              <td class="lable_text_td"><label for="textinput-fc">Price:</label></td>
+              <td><input type="text" disabled="disabled" class="attr_disabled" name="textinput-fc" id="vending_item_price" placeholder="Text input" value="gfd"></td>
+            </tr>
+            <tr>
+              <td class="lable_text_td"><label for="textinput-fc">Avalability:</label></td>
+              <td>
+                <select name="vending_item_avalability" disabled="disabled" class="attr_disabled" id="vending_item_avalability">
+                  <option name="yes" value="yes">Yes</option>
+                  <option name="no" value="no">No</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="ui-block-b">
+          <table class="form_table cus_disabled">
+            <tr>
+              <td class="lable_text_td"><label for="textinput-fc">Discription:</label></td>
+              <td><input cols="40" rows="8" name="textarea" disabled="disabled" class="attr_disabled" id="vending_item_discription" placeholder="Text input" value=""></td>
+            </tr>
+            <tr>
+              <td class="lable_text_td"><label for="textinput-fc">Vending Type:</label></td>
+              <td>
+                <select name="vending_item_vending_type" disabled="disabled" class="attr_disabled" id="vending_item_vending_type">
+                  <option name="servise" value="servise">Servise</option>
+                  <option name="product" value="product">Product</option>
+                  <option name="maintenance" value="maintenance">Maintenance</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div><!-- /grid-a -->
+      <hr>
+      <fieldset class="ui-grid-b">
+        <div class="ui-block-a"><p style="text-align:center"><a href="#">Delete</a></p></div>
+        <div class="ui-block-b">
+          <a href="#" class="ui-btn make_form_editable" style="display:block">Edit</a>
+          <a href="#" class="ui-btn make_form_save_data hide">Save</a>
+        </div>
+        <div class="ui-block-c"><a href="#" class="detail_page_close ui-btn">Close</a></div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+
+
   <script data-main="js/vending" src="js/lib/require.js"></script>
 </body>
 </html>

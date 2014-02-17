@@ -48,8 +48,6 @@ $(function()
 
 });
 
-
-
 /***************
 // S EVENT LISTENERS
 ****************/
@@ -60,8 +58,6 @@ $(function()
 */
 $(document).on('click', '.make_form_editable', function() {
     make_form_editable ();
-   
-    // $( ".make_form_save_data" ).button( "enable" );
 });
 
 
@@ -75,19 +71,32 @@ $(document).on('tap', '.make_form_save_data', function() {
 
 
 /*
-    // vendings advanced options,
-    // item click listen
-    // call - get_by_vending()
+    // closing the detail page on vending
 */
-$("#vending_advanced_popup").on("popupafterclose", function() {
-    // @ coman-func.js
-    make_form_desabled ()
-    // $( ".make_form_save_data" ).addClass('ui-disabled');
-    // $( ".make_form_save_data" ).button( "disable" );
+$(document).on("click",".detail_page_close", function() {
+    if (window.formChanged == false)
+    {
+        $.mobile.changePage('#invoice', {transition: "pop", role: "page"} );
+    }
+    else
+    {
+        $("#conferm_data_save").popup("open")
+    }
 });
 
+/*
+    // conferm popup to close #conferm_data_save
+    // close 
+*/
 
+$(document).on("click","#conferm_data_cancel_btn", function() {
+    $.mobile.changePage('#invoice');
+    make_form_desabled ()
+})
 
+$(document).on("click","#conferm_data_save_btn", function() {
+    $("#conferm_data_save").popup("close")
+})
 
 
 
@@ -176,13 +185,16 @@ function get_all_products ()
             $( "#vending_item_vending_type" ).val( vendingValues.vending_item_vending_type ).attr("selected", "selected").trigger('change')
             $( "#vending_item_avalability" ).val(vendingValues.vending_item_avalability).attr("selected", "selected").trigger('change')
 
-
+            window.formChanged = false;
 
         }
     });
 
 
-        $( "#vending_advanced_popup" ).popup( "open" )
+    $.mobile.changePage('#vending_detail_page', { transition: "pop", role: "dialog" } );
+
+        // $( "#vending_detail_page" ).popup( "open" )
+        // $( "#vending_advanced_popup" ).popup( "open" )
 
         
     }
